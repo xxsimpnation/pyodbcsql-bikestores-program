@@ -140,7 +140,8 @@ def customer(conn):
       except pyodbc.Error as Error:
         print('invalid data')
         time.sleep(3)
-        continue    
+        continue   
+        
   #update customer data   
   elif (choose == '2'):
      while(True):
@@ -175,9 +176,8 @@ def show_menu(conn):
   print("=== BIKESTORES PROGRAM APPLICATION")
   print("1. Insert Buyer Data")
   print("2. Check Stocks of Product")
-  print("3. Customer Info")
-  print("4. Kasus yang telah selesai")
-  print("0. Keluar")
+  print("3. Customer Information Input")
+  print("0. Exit")
   print("------------------")
   menu = input("Pilih menu : ")
 
@@ -189,12 +189,10 @@ def show_menu(conn):
     stock_check(conn)
   elif menu == "3":
     customer(conn)
-  elif menu == "4":
-    print('kambing')
   elif menu == "0":
     exit()
   else:
-    print("Menu salah!")
+    print("Invalid Menu!")
 
 if __name__ == "__main__":
   while(True):
